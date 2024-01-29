@@ -1,5 +1,9 @@
 fastapi
 gunicorn
 httptools
+psycopg2-binary
+pydantic
+pydantic_settings
+sqlalchemy
 uvicorn
 uvloop

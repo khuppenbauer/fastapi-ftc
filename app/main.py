@@ -1,8 +1,11 @@
 # main.py
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from .routes import ftc
 
 app = FastAPI()
+
+app.include_router(ftc.router, prefix='/api/ftc')
 
 app.add_middleware(
   CORSMiddleware,
