@@ -13,6 +13,7 @@ def add_ftc(ftc: schemas.FtcInput, db: Session = Depends(get_db)):
   if ftc.name_1_first_name != 'Vorname':
     db_ftc = models.Ftc(
       id=uuid.uuid4(),
+      date_created=ftc.entry_time,
       firstname=ftc.name_1_first_name,
       lastname=ftc.name_1_last_name,
       street=ftc.address_1_street_address,
@@ -23,7 +24,9 @@ def add_ftc(ftc: schemas.FtcInput, db: Session = Depends(get_db)):
       age=ftc.number_1,
       level=ftc.radio_3,
       lunch_saturday=ftc.radio_1,
-      lunch_sunday=ftc.radio_2
+      lunch_sunday=ftc.radio_2,
+      price=ftc.radio_4,
+      number=ftc.text_1,
     )
     db.add(db_ftc)
     db.commit()

@@ -13,3 +13,6 @@ class FtcInput(BaseModel):
   radio_1: str = None
   radio_2: str = None
   radio_3: str = None
+  radio_4: str = None
+  text_1: str = None
+  entry_time: str = None
